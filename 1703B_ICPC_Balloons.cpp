@@ -12,13 +12,15 @@ int main()
         cin>>n;
         string s;
         cin>>s;
+        map<char, ll>mp;
         ll count = 0;
-        for(ll i=0; i<n/2; i++)
+        for(ll i=0; i<n; i++)
         {
-            if(s[i] != s[n-i-1]) count+=2;
-            else break;
+            mp[s[i]]++;
+            if(mp[s[i]] == 1) count += 2;
+            else count++;
         }
-        cout<<n - count<<endl;
+        cout<<count<<endl;
     }
     return 0;
 }

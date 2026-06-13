@@ -8,30 +8,20 @@ int main()
     cin>>t;
     while(t--)
     {
-        ll n, x;
-        cin>>n>>x;
+        ll n, k;
+        cin>>n>>k;
         ll a[n];
         for(ll i=0; i<n; i++)
         {
             cin>>a[i];
         }
-        ll answer = 0, maximum = 0;
-        for(ll i=0; i<n; i++)
+        ll sum = a[0], maximum = a[0];
+        for(ll i=1; i<n; i++)
         {
-            if(i==0)
-            {
-                answer = a[i];
-                maximum =a[i];
-            }
-            else
-            {
-                answer = a[i] - a[i-1];
-                maximum = max(maximum, answer);
-            }
+            sum = a[i] - a[i-1];
+            maximum = max(maximum, sum);
         }
-        answer = 2*abs(a[n-1] - x);
-        maximum = max(maximum, answer);
-
+        maximum = max(maximum, 2*(k - a[n-1]));
         cout<<maximum<<endl;
     }
     return 0;

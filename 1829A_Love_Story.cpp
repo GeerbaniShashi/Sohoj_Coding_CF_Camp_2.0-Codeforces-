@@ -8,17 +8,15 @@ int main()
     cin>>t;
     while(t--)
     {
-        ll n;
-        cin>>n;
+        string str = "codeforces";
         string s;
         cin>>s;
         ll count = 0;
-        for(ll i=0; i<n/2; i++)
+        for(ll i=0; i<s.length(); i++)
         {
-            if(s[i] != s[n-i-1]) count+=2;
-            else break;
+            if(str[i] != s[i]) count++;
         }
-        cout<<n - count<<endl;
+        cout<<count<<endl;
     }
     return 0;
 }
