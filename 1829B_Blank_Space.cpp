@@ -15,21 +15,18 @@ int main()
         {
             cin>>a[i];
         }
-        ll count = 0, maximum = 0;
+        ll maximum = 0, count = 0;
         for(ll i=0; i<n; i++)
         {
-            if(a[i] == 0)
-            {
-                count++;
-                maximum = max(maximum, count);
-            }
+            if(a[i] == 0) count++;
             else
             {
+                maximum = max(maximum, count);
                 count = 0;
             }
         }
+        maximum = max(maximum, count);
         cout<<maximum<<endl;
     }
-
     return 0;
 }
